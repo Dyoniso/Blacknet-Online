@@ -52,7 +52,7 @@ def getCreds():
 	timmer = input(tag1+"Set Timmer: ")
 	timmerInt = int(timmer)
 	
-	if timmerInt >= 10:
+	if timmerInt >= 8:
 		print("")
 		print(tag+"Writing data...")
 		arqUser = open('data/user.txt', 'w')
@@ -67,7 +67,7 @@ def getCreds():
 		blackNetWorks()
 		theLoop()
 	else:
-		print(tag3+"the time is less than 10")
+		print(tag3+"the time is less than 8")
 		exit(0)
 	
 
@@ -166,6 +166,7 @@ def blackNetWorks():
 		time.sleep(0.5)
 		print("\n"+tag+"Clearing pycache...")
 		try:
+			os.chdir(r"core")
 			os.system("rm -r __pycache__")
 			print(tag2+"Complete!")
 		except:
