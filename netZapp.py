@@ -7,11 +7,7 @@ if sys.version_info.major < 3:
 from core.blackcore import *
 
 def main():
-	print("")
-	print(red+"[!] "+white+"netZapp ON")
-	print("")
 	netZapp()
-		
 		
 if __name__ == "__main__":
 	main()

@@ -29,7 +29,6 @@ blackNetBanner = """
 """    
 
 netZappBanner = blue+"""
-
            , /
          , '/
         , '/
@@ -38,8 +37,8 @@ netZappBanner = blue+"""
            /, '
           /, '
          /, '
-        / '
-
+        / '   
+              -> BlackNet >.<
 """
 
 menuopt = """
@@ -49,11 +48,7 @@ menuopt = """
   -> By Dyoniso_
   """
 
-try:
-	os.system("rm -r __pycache__")
-	print(tag2+"Complete!")
-except:
-	print(tag3+"Error!")
+os.system("")
 
 def reset():
 	python = sys.executable
@@ -124,7 +119,7 @@ def blackNetWorks():
 	
 	try:
 		getip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-		print(green+"Reading "+getip+" Ok!")
+		print(tag+green+"Reading "+getip+" Ok!")
 	except:
 		print(red+" Error!")
 		print(blackNetBanner) 
@@ -202,11 +197,12 @@ def banner():
 def netZapp():
 
 	print(netZappBanner)
+	print(red+"[!] "+white+"netZapp ON")
 	print("")
 
 	try:
 		getip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-		print(green+"Reading "+getip+" Ok!")
+		print(tag+green+"Reading "+getip+" Ok!")
 	except:
 		print(tag3+"Error to get public ip.")
 		exit()
