@@ -18,7 +18,7 @@ tag2 = green+"[+] "+white
 tag1 = red+"[+] "+white
 tag = blue+"[*] "+white
 
-blackNetBanner = """
+blackNetBanner = "\n"+"""
  ______  __                __      ____  _____        _    
 |_   _ \[  |              [  |  _ |_   \|_   _|      / |_  
   | |_) || | ,--.   .---.  | | / ]  |   \ | |  .---.`| |-' 
@@ -109,17 +109,15 @@ def theLoop():
 			blackNetWorks()
 				
 	except(KeyboardInterrupt, SystemExit):
-		print(tag3+"Tool Interrupted"+"\n")
+		print("\n")
 		done = True
-		time.sleep(0.5)
-		print(white)
 		exit(0)
 	
 def blackNetWorks():
 	
 	try:
 		getip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-		print(tag+green+"Reading "+getip+" Ok!")
+		print("\n"+tag+green+"Reading "+getip+" Ok!"+white)
 	except:
 		print(red+" Error!")
 		print(blackNetBanner) 
@@ -202,7 +200,7 @@ def netZapp():
 
 	try:
 		getip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-		print(tag+green+"Reading "+getip+" Ok!")
+		print("\n"+tag+green+"Reading "+getip+" Ok!"+white)
 	except:
 		print(tag3+"Error to get public ip.")
 		exit()
