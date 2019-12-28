@@ -29,7 +29,7 @@ blackNetBanner = "\n"+"""
 """    
 
 netZappBanner = blue+"""
-  ,.,,,,,,,,,,,.,,,,,
+  ,.,,,,,,,,,,,.,,,,,,,,
     . .. .  . / ..  .
            , /
          , '/
@@ -50,8 +50,8 @@ menuopt = """
   -> By Dyoniso_
   """
 
+os.system("cls")
 os.system("clear")
-
 os.chdir(r"core/")
 os.system("rm -r __pycache__")
 os.chdir(r"../")
@@ -190,7 +190,7 @@ def blackNetWorks():
 		
 	except:
 		print(blackNetBanner) 
-		print(tag3+"Fatal Error, rebooting tool...")
+		print("\n"+tag3+"Fatal Error, rebooting tool...")
 		theLoop()
 	
 	  
