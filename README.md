@@ -9,8 +9,7 @@
 ## Requirements
 
 Required:
-* requests
+* Requests
 * Telnet
-
 - Login and Password of TelnetRouter
 
