@@ -52,9 +52,6 @@ menuopt = """
 
 os.system("cls")
 os.system("clear")
-os.chdir(r"core/")
-os.system("rm -r __pycache__")
-os.chdir(r"../")
 
 def reset():
 	python = sys.executable
