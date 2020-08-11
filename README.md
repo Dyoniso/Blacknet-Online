@@ -13,5 +13,5 @@ Required:
 * Telnet
 - Login and Password of TelnetRouter
 
-![alt text](https://raw.githubusercontent.com/Dyoniso/Blacknet-Online/master/icon.png)
+![alt text](https://raw.githubusercontent.com/Dyoniso/Blacknet-Online/master/icon.png?raw=true)
 
